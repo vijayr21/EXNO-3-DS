@@ -220,6 +220,27 @@ plt.show()
 
 <img width="822" height="554" alt="image" src="https://github.com/user-attachments/assets/ad97407b-5ffd-4585-9709-412f6c82edcc" />
 
+```
+dt=pd.read_csv("titanic_dataset.csv")
+dt
+
+from sklearn.preprocessing import QuantileTransformer
+qt=QuantileTransformer(output_distribution='normal',n_quantiles=891)
+dt["Age_1"]=qt.fit_transform(dt[["Age"]])
+sm.qqplot(dt['Age'],line='45')
+plt.show()
+```
+
+<img width="836" height="543" alt="image" src="https://github.com/user-attachments/assets/f8bc7867-37da-48d8-93da-ec975a002c1c" />
+
+```
+sm.qqplot(df["Highly Negative Skew_1"],line='45')
+plt.show()
+```
+
+
+<img width="821" height="562" alt="image" src="https://github.com/user-attachments/assets/60a63df4-4312-48ce-932a-ab358863cfb7" />
+
 
 
 
